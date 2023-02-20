@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .httpBasic().disable()
                 .authorizeRequests(expressionInterceptUrlRegistry -> expressionInterceptUrlRegistry
                         .antMatchers(swaggerEndpoints).permitAll()
+                        .antMatchers("/hello").permitAll()
                         .anyRequest().authenticated());
 
 
